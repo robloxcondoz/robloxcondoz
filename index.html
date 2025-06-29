@@ -87,17 +87,46 @@
       gap: 75px;
     }
 
-    .image-button img {
-      width: 300px;
-      height: 300px;
-      object-fit: cover;
-      border-radius: 10px;
-      transition: transform 0.2s;
-    }
+    .image-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+}
 
-    .image-button img:hover {
-      transform: scale(1.1);
-    }
+.image-button img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid orange;
+  box-shadow: 0 4px 12px rgba(255, 165, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-button img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(255, 165, 0, 0.4);
+}
+
+.image-label {
+  margin-top: 12px;
+  padding: 6px 12px;
+  border: 2px solid orange;
+  border-radius: 6px;
+  color: orange;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: rgba(255, 165, 0, 0.1);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.image-label:hover {
+  background-color: orange;
+  color: black;
+}
   </style>
 </head>
 <body>
@@ -109,29 +138,46 @@
       </h1>
 
       <div class="button-row">
-  <a class="image-button" href="https://roblox.tg/games/109983668079237/TRAITS-Steal-a-Brainrot?privateServerLinkCode=39456302996184500917116702071902" target="_blank" rel="noopener noreferrer">
-    <img src="pictures/1.jpg" alt="Button 1" />
-  </a>
-  <a class="image-button" href="https://roblox.tg/games/109983668079237/TRAITS-Steal-a-Brainrot?privateServerLinkCode=39456302996184500917116702071902" target="_blank" rel="noopener noreferrer">
-    <img src="pictures/2.jpg" alt="Button 2" />
-  </a>
-  <a class="image-button" href="https://roblox.tg/games/109983668079237/TRAITS-Steal-a-Brainrot?privateServerLinkCode=39456302996184500917116702071902" target="_blank" rel="noopener noreferrer">
-    <img src="pictures/3.jpg" alt="Button 3" />
-  </a>
+  <div class="image-button">
+    <a href="https://roblox.tg/games/109983668079237/TRAITS-Steal-a-Brainrot?privateServerLinkCode=39456302996184500917116702071902" target="_blank" rel="noopener noreferrer">
+      <img src="pictures/1.jpg" alt="Button 1" />
+    </a>
+    <div class="image-label">Game 1</div>
+  </div>
+  <div class="image-button">
+    <a href="https://roblox.tg/games/109983668079237/TRAITS-Steal-a-Brainrot?privateServerLinkCode=39456302996184500917116702071902" target="_blank" rel="noopener noreferrer">
+      <img src="pictures/2.jpg" alt="Button 2" />
+    </a>
+    <div class="image-label">Game 2</div>
+  </div>
+  <div class="image-button">
+    <a href="https://roblox.tg/games/109983668079237/TRAITS-Steal-a-Brainrot?privateServerLinkCode=39456302996184500917116702071902" target="_blank" rel="noopener noreferrer">
+      <img src="pictures/3.jpg" alt="Button 3" />
+    </a>
+    <div class="image-label">Game 3</div>
+  </div>
 </div>
 
 <div class="button-row">
-  <a class="image-button" href="https://roblox.tg/games/109983668079237/TRAITS-Steal-a-Brainrot?privateServerLinkCode=39456302996184500917116702071902" target="_blank" rel="noopener noreferrer">
-    <img src="pictures/4.jpg" alt="Button 4" />
-  </a>
-  <a class="image-button" href="https://roblox.tg/games/109983668079237/TRAITS-Steal-a-Brainrot?privateServerLinkCode=39456302996184500917116702071902" target="_blank" rel="noopener noreferrer">
-    <img src="pictures/5.jpg" alt="Button 5" />
-  </a>
-  <a class="image-button" href="https://roblox.tg/games/109983668079237/TRAITS-Steal-a-Brainrot?privateServerLinkCode=39456302996184500917116702071902" target="_blank" rel="noopener noreferrer">
-    <img src="pictures/6.jpg" alt="Button 6" />
-  </a>
+  <div class="image-button">
+    <a href="https://roblox.tg/games/109983668079237/TRAITS-Steal-a-Brainrot?privateServerLinkCode=39456302996184500917116702071902" target="_blank" rel="noopener noreferrer">
+      <img src="pictures/4.jpg" alt="Button 4" />
+    </a>
+    <div class="image-label">Game 4</div>
+  </div>
+  <div class="image-button">
+    <a href="https://roblox.tg/games/109983668079237/TRAITS-Steal-a-Brainrot?privateServerLinkCode=39456302996184500917116702071902" target="_blank" rel="noopener noreferrer">
+      <img src="pictures/5.jpg" alt="Button 5" />
+    </a>
+    <div class="image-label">Game 5</div>
+  </div>
+  <div class="image-button">
+    <a href="https://roblox.tg/games/109983668079237/TRAITS-Steal-a-Brainrot?privateServerLinkCode=39456302996184500917116702071902" target="_blank" rel="noopener noreferrer">
+      <img src="pictures/6.jpg" alt="Button 6" />
+    </a>
+    <div class="image-label">Game 6</div>
+  </div>
 </div>
-
 
     <div class="right-side">
       <p>
