@@ -11,22 +11,22 @@
       background-color: #000;
       color: white;
       font-family: Arial, sans-serif;
-
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
+      zoom: 0.99;
     }
 
     .main-container {
       display: flex;
       width: 100%;
-      max-width: 1400px; /* wider max width */
+      max-width: 1400px;
       gap: 60px;
     }
 
     .left-side {
-      flex: 1.3; /* a bit less wide */
+      flex: 1.3;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -34,7 +34,7 @@
     }
 
     .right-side {
-      flex: 1.7; /* more space on right */
+      flex: 1.7;
       padding: 20px;
       display: flex;
       align-items: center;
@@ -50,7 +50,7 @@
       border-left: 6px solid orange;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(255, 165, 0, 0.3);
-      max-width: 600px; /* wider paragraph */
+      max-width: 600px;
       margin: 0 auto;
       font-weight: 600;
       text-align: center;
@@ -88,102 +88,213 @@
     }
 
     .image-button {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  color: white;
-  text-decoration: none;
-}
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      color: white;
+      text-decoration: none;
+      position: relative;
+    }
 
-.image-button img {
-  width: 300px;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 12px;
-  border: 2px solid orange;
-  box-shadow: 0 4px 12px rgba(255, 165, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    .image-button img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 2px solid orange;
+      box-shadow: 0 4px 12px rgba(255, 165, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+      cursor: pointer;
+    }
 
-.image-button img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(255, 165, 0, 0.4);
-}
+    .image-button img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 16px rgba(255, 165, 0, 0.4);
+    }
 
-.image-label {
-  margin-top: 12px;
-  padding: 6px 12px;
-  border: 2px solid orange;
-  border-radius: 6px;
-  color: orange;
-  font-size: 18px;
-  font-weight: bold;
-  background-color: rgba(255, 165, 0, 0.1);
-  transition: background-color 0.3s, color 0.3s;
-}
+    .image-label {
+      margin-top: 12px;
+      padding: 6px 12px;
+      border: 2px solid orange;
+      border-radius: 6px;
+      color: orange;
+      font-size: 18px;
+      font-weight: bold;
+      background-color: rgba(255, 165, 0, 0.1);
+      transition: background-color 0.3s, color 0.3s;
+    }
 
-.image-label:hover {
-  background-color: orange;
-  color: black;
-}
+    .image-label:hover {
+      background-color: orange;
+      color: black;
+    }
+
+    .premium img {
+      filter: blur(8px);
+      pointer-events: auto;
+    }
+
+    .premium .image-label::after {
+      content: " (Premium)";
+      color: gold;
+    }
+
+    .unlocked img {
+      filter: none !important;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .modal-content {
+      background-color: #111;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid orange;
+      border-radius: 8px;
+      width: 300px;
+      text-align: center;
+      color: white;
+    }
+
+    .modal input {
+      padding: 8px;
+      width: 80%;
+      margin-top: 10px;
+      border: 1px solid orange;
+      border-radius: 4px;
+      background-color: #222;
+      color: white;
+    }
+
+    .modal button {
+      margin-top: 10px;
+      padding: 6px 12px;
+      background-color: orange;
+      border: none;
+      color: black;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
   <div class="main-container">
     <div class="left-side">
       <h1>
-        <span class="title-orange"> Condo</span> 
+        <span class="title-orange">Condo</span>
         <span class="title-black">Games</span>
       </h1>
 
+      <!-- Top 3 Games -->
       <div class="button-row">
-  <div class="image-button">
-    <a href="https://roblox.tg/games/109983668079237/TRAITS-Steal-a-Brainrot?privateServerLinkCode=39456302996184500917116702071902" target="_blank" rel="noopener noreferrer">
-      <img src="pictures/1.jpg" alt="Button 1" />
-    </a>
-    <div class="image-label">Game 1</div>
-  </div>
-  <div class="image-button">
-    <a href="https://roblox.tg/games/109983668079237/TRAITS-Steal-a-Brainrot?privateServerLinkCode=39456302996184500917116702071902" target="_blank" rel="noopener noreferrer">
-      <img src="pictures/2.jpg" alt="Button 2" />
-    </a>
-    <div class="image-label">Game 2</div>
-  </div>
-  <div class="image-button">
-    <a href="https://roblox.tg/games/109983668079237/TRAITS-Steal-a-Brainrot?privateServerLinkCode=39456302996184500917116702071902" target="_blank" rel="noopener noreferrer">
-      <img src="pictures/3.jpg" alt="Button 3" />
-    </a>
-    <div class="image-label">Game 3</div>
-  </div>
-</div>
+        <div class="image-button">
+          <a href="https://wvww-roblox.com/games/73333020612229/Hot-Hang-Out?privateServerLinkCode=33840217034254722824730141539226" target="_blank">
+            <img src="pictures/1.png" alt="Game 1" />
+          </a>
+          <div class="image-label">Game 1</div>
+        </div>
+        <div class="image-button">
+          <a href="https://wvww-roblox.com/games/16031953626/visit-your-bestest-neko-friend?privateServerLinkCode=33840217034254722824730141539226" target="_blank">
+            <img src="pictures/2.jpg" alt="Game 2" />
+          </a>
+          <div class="image-label">Game 2</div>
+        </div>
+        <div class="image-button">
+          <a href="https://wvww-roblox.com/games/91984733247729/Interesting-Weird-Game-UPD?privateServerLinkCode=33840217034254722824730141539226" target="_blank">
+            <img src="pictures/3.jpg" alt="Game 3" />
+          </a>
+          <div class="image-label">Game 3</div>
+        </div>
+      </div>
 
-<div class="button-row">
-  <div class="image-button">
-    <a href="https://roblox.tg/games/109983668079237/TRAITS-Steal-a-Brainrot?privateServerLinkCode=39456302996184500917116702071902" target="_blank" rel="noopener noreferrer">
-      <img src="pictures/4.jpg" alt="Button 4" />
-    </a>
-    <div class="image-label">Game 4</div>
-  </div>
-  <div class="image-button">
-    <a href="https://roblox.tg/games/109983668079237/TRAITS-Steal-a-Brainrot?privateServerLinkCode=39456302996184500917116702071902" target="_blank" rel="noopener noreferrer">
-      <img src="pictures/5.jpg" alt="Button 5" />
-    </a>
-    <div class="image-label">Game 5</div>
-  </div>
-  <div class="image-button">
-    <a href="https://roblox.tg/games/109983668079237/TRAITS-Steal-a-Brainrot?privateServerLinkCode=39456302996184500917116702071902" target="_blank" rel="noopener noreferrer">
-      <img src="pictures/6.jpg" alt="Button 6" />
-    </a>
-    <div class="image-label">Game 6</div>
-  </div>
-</div>
+      <!-- Bottom 3 Premium Games -->
+      <div class="button-row" style="margin-top: 80px;">
+        <div class="image-button premium" data-link="https://wvww-roblox.com/games/136072693824208/Very-strange-game-UPDATE?privateServerLinkCode=33840217034254722824730141539226">
+          <img src="pictures/4.jpg" alt="Game 4" />
+          <div class="image-label">Game 4</div>
+        </div>
+        <div class="image-button premium" data-link="https://wvww-roblox.com/games/108548864118246/XYZ-R64-Game-CATALOG?privateServerLinkCode=33840217034254722824730141539226">
+          <img src="pictures/5.png" alt="Game 5" />
+          <div class="image-label">Game 5</div>
+        </div>
+        <div class="image-button premium" data-link="https://wvww-roblox.com/games/15932212022/your-sus-gas-station-worker?privateServerLinkCode=33840217034254722824730141539226">
+          <img src="pictures/6.jpg" alt="Game 6" />
+          <div class="image-label">Game 6</div>
+        </div>
+      </div>
 
-    <div class="right-side">
-      <p>
-        All games get <span class="highlight">reuploaded</span> if they get <span class="highlight">banned</span>.
-      </p>
+      <div class="right-side">
+        <p>
+          All games get <span class="highlight">reuploaded</span> if they get <span class="highlight">banned</span>.
+        </p>
+      </div>
     </div>
   </div>
+
+  <!-- Modal for key input -->
+  <div id="keyModal" class="modal">
+    <div class="modal-content">
+      <p>Enter Key to Unlock:</p>
+      <input type="text" id="keyInput" placeholder="Enter key..." />
+      <button onclick="submitKey()">Unlock</button>
+    </div>
+  </div>
+
+  <script>
+    const correctKey = "condogame1";
+    let currentPremiumButton = null;
+
+    // Add click listener to each blurred image only
+    document.querySelectorAll(".premium img").forEach(img => {
+      img.addEventListener("click", (e) => {
+        currentPremiumButton = e.target.closest(".premium");
+        document.getElementById("keyModal").style.display = "block";
+        document.getElementById("keyInput").value = "";
+      });
+    });
+
+    // Handle key submission
+    function submitKey() {
+      const enteredKey = document.getElementById("keyInput").value;
+      if (enteredKey === correctKey && currentPremiumButton) {
+        const imgSrc = currentPremiumButton.querySelector("img").src;
+        const labelText = currentPremiumButton.querySelector(".image-label").innerText;
+        const gameLink = currentPremiumButton.getAttribute("data-link");
+
+        currentPremiumButton.classList.remove("premium");
+        currentPremiumButton.classList.add("unlocked");
+        currentPremiumButton.innerHTML = `
+          <a href="${gameLink}" target="_blank">
+            <img src="${imgSrc}" />
+          </a>
+          <div class="image-label">${labelText}</div>
+        `;
+
+        document.getElementById("keyModal").style.display = "none";
+      } else {
+        alert("Incorrect key.");
+      }
+    }
+
+    // Close modal on background click
+    window.onclick = function(event) {
+      if (event.target === document.getElementById("keyModal")) {
+        document.getElementById("keyModal").style.display = "none";
+      }
+    };
+  </script>
 </body>
 </html>
